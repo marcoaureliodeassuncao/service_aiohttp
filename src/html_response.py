@@ -9,6 +9,64 @@ from hash_marco import hash_md5
 class html_responser:
 
 
+	def home():
+		content = '''<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+	<body>
+	    <h1>Home</h1>
+	    <script type="text/javascript">
+			function Romanizer(){
+				var dec=document.getElementById("RomanForm").value;
+				window.location = "http://localhost:8080/romano/" + dec;
+				return false;
+			}
+		</script>
+		<script>
+			function ValidateCPF(){
+				var cpf=document.getElementById("ValidatorForm").value;
+				window.location = "http://localhost:8080/valida_cpf/" + cpf;
+				return false;
+			}
+		</script>
+		<script>
+			function ZeroCounter(){
+				var zero=document.getElementById("ZeroForm").value;
+				window.location = "http://localhost:8080/dist_zeros/" + zero;
+				return false;
+			}
+		</script>
+		<script>
+			function GeneratePassword(){
+				window.location = "http://localhost:8080/gera_senha/";
+				return false;
+			}
+		</script>
+		<form method="POST" action="">
+			<label>Input a number: </label>
+			<input type="text" name="num_dec" id="RomanForm">
+			<input type="button" value="Romanize" onclick="Romanizer()"/>
+		</form>
+		<form method="POST" action="">
+			<label>Input your CPF: </label>
+			<input type="text" name="cpf" id="ValidatorForm">
+			<input type="button" value="Validate" onclick="ValidateCPF()"/>
+		</form>
+		<form method="POST" action="">
+			<label>Input an sentence with zero's: </label>
+			<input type="text" name="zero" id="ZeroForm">
+			<input type="button" value="Counter" onclick="ZeroCounter()"/>
+		</form>
+		<form>
+			<label>Generate a password</label>
+			<input type="button" value="Generate" onclick="GeneratePassword()"/>
+		</form>
+	</body>
+</html>
+'''
+		return content
+
 	def romano(num):
 		content = '''<!DOCTYPE html>
 <html>

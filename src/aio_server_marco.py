@@ -6,6 +6,10 @@ from html_response import html_responser
 import json
 
 
+async def home(self):
+	return web.Response(text=html_responser.home(), content_type='html')
+
+
 async def romano(request):
 	num = request.match_info.get('numero', "Anonymous")
 	num_roman = html_responser.romano(num)
@@ -40,7 +44,8 @@ async def senha(request):
 
 
 app = web.Application()
-app.add_routes([web.get('/romano/{numero}', romano),
+app.add_routes([web.get('/home', home),
+		web.get('/romano/{numero}', romano),
 		web.get('/valida_cpf/{cpf}', cpf),
 		web.get('/dist_zeros/{string}', zero),
 		web.get('/gera_senha/', senha)])
