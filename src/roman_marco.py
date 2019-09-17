@@ -31,7 +31,3 @@ def numero_para_romano(num):
 	else:
 		return False
 
-
-if __name__ == '__main__':
-	print(valida_numero(sys.argv[1]))
-	print(numero_para_romano(sys.argv[1]))
