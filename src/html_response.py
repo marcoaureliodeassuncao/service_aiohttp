@@ -56,7 +56,7 @@ class html_responser:
 		<form method="POST" action="">
 			<label>Input an sentence with zero's: </label>
 			<input type="text" name="zero" id="ZeroForm">
-			<input type="button" value="Counter" onclick="ZeroCounter()"/>
+			<input type="button" value="Count" onclick="ZeroCounter()"/>
 		</form>
 		<form>
 			<label>Generate a password</label>

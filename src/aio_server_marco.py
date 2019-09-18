@@ -3,7 +3,6 @@ from gera_senha_marco import gera_senha
 from classificador_senhas_marco import classificar_senha
 from hash_marco import hash_md5
 from html_response import html_responser
-import json
 
 
 async def home(self):
